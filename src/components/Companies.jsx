@@ -133,6 +133,16 @@ const Companies = () => {
               <TextField
                 {...params}
                 label="Search By company name"
+                sx={{
+                  "& .MuiInputLabel-root.Mui-focused,& .MuiInputLabel-shrink": {
+                    opacity: 0,
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "transparent",
+                    },
+                  },
+                }}
                 slotProps={{
                   input: {
                     ...params.InputProps,
@@ -150,7 +160,20 @@ const Companies = () => {
             onInputChange={(event, newValue) => setSelectedLocation(newValue)}
             sx={{ backgroundColor: "white", borderRadius: 3 }}
             renderInput={(params) => (
-              <TextField {...params} label="Filter By Location" />
+              <TextField
+                {...params}
+                label="Filter By Location"
+                sx={{
+                  "& .MuiInputLabel-root.Mui-focused,& .MuiInputLabel-shrink": {
+                    opacity: 0,
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "transparent",
+                    },
+                  },
+                }}
+              />
             )}
           />
         </Grid>
@@ -161,7 +184,20 @@ const Companies = () => {
             onInputChange={(event, newValue) => setSelectedIndustry(newValue)}
             sx={{ backgroundColor: "white", borderRadius: 3 }}
             renderInput={(params) => (
-              <TextField {...params} label="Filter By industry" />
+              <TextField
+                {...params}
+                label="Filter By industry"
+                sx={{
+                  "& .MuiInputLabel-root.Mui-focused,& .MuiInputLabel-shrink": {
+                    opacity: 0,
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    "&.Mui-focused fieldset": {
+                      borderColor: "transparent",
+                    },
+                  },
+                }}
+              />
             )}
           />
         </Grid>
@@ -177,8 +213,8 @@ const Companies = () => {
                 color: "white",
                 borderColor: "white",
                 "&.Mui-disabled": {
-                  color: "rgba(255,255,255,0.5)", 
-                  borderColor: "rgba(255,255,255,0.3)", 
+                  color: "rgba(255,255,255,0.5)",
+                  borderColor: "rgba(255,255,255,0.3)",
                   backgroundColor: "rgba(255,255,255,0.1)",
                 },
               }}
@@ -190,10 +226,12 @@ const Companies = () => {
             <Button
               variant="outlined"
               fullWidth
-              sx={{ color: "white", borderColor: "white"
-                ,"&.Mui-disabled": {
-                  color: "rgba(255,255,255,0.5)", 
-                  borderColor: "rgba(255,255,255,0.3)", 
+              sx={{
+                color: "white",
+                borderColor: "white",
+                "&.Mui-disabled": {
+                  color: "rgba(255,255,255,0.5)",
+                  borderColor: "rgba(255,255,255,0.3)",
                   backgroundColor: "rgba(255,255,255,0.1)",
                 },
               }}
@@ -219,7 +257,7 @@ const Companies = () => {
           <Table sx={{ width: "100%" }}>
             <TableHead>
               <TableRow>
-                <TableCell sx={{ fontWeight: "bold" }}>Company Name</TableCell>
+                <TableCell sx={{ fontWeight: "bold" }}>Company</TableCell>
                 <TableCell align="center" sx={{ fontWeight: "bold" }}>
                   Location
                 </TableCell>
@@ -230,7 +268,7 @@ const Companies = () => {
                   align="center"
                   sx={{
                     fontWeight: "bold",
-                    display: { xs: "none", md: "table-cell" },
+                    //display: { xs: "none", md: "table-cell" },
                   }}
                 >
                   Number of Employees
@@ -256,7 +294,7 @@ const Companies = () => {
           <Table sx={{ width: "100%" }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell sx={{ fontWeight: "bold" }}>Company Name</TableCell>
+                <TableCell sx={{ fontWeight: "bold" }}>Company</TableCell>
                 <TableCell align="center" sx={{ fontWeight: "bold" }}>
                   Location
                 </TableCell>
@@ -267,7 +305,7 @@ const Companies = () => {
                   align="center"
                   sx={{
                     fontWeight: "bold",
-                    display: { xs: "none", md: "table-cell" },
+                    //display: { xs: "none", md: "table-cell" },
                   }}
                 >
                   Number of Employees
@@ -288,7 +326,7 @@ const Companies = () => {
                     <TableCell align="center">{row.industry}</TableCell>
                     <TableCell
                       align="center"
-                      sx={{ display: { xs: "none", md: "table-cell" } }}
+                      // sx={{ display: { xs: "none", md: "table-cell" } }}
                     >
                       {row.employees}
                     </TableCell>
