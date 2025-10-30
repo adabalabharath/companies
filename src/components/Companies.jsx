@@ -114,7 +114,11 @@ const Companies = () => {
           gap: 2,
           justifyContent: "center",
           alignItems: "center",
-          my: 3,
+          my: 2,
+          boxShadow:1,
+          borderRadius:3,
+          p:3
+
         }}
       >
         <Grid item size={{ xs: 12, md: 3 }}>
@@ -203,7 +207,7 @@ const Companies = () => {
                 <TableCell align="center" sx={{ fontWeight: "bold" }}>
                   Industry
                 </TableCell>
-                <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                <TableCell align="center" sx={{ fontWeight: "bold", display: { xs: "none", md: "table-cell" } }}>
                   Number of Employees
                 </TableCell>
               </TableRow>
@@ -234,7 +238,7 @@ const Companies = () => {
                 <TableCell align="center" sx={{ fontWeight: "bold" }}>
                   Industry
                 </TableCell>
-                <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                <TableCell align="center"  sx={{fontWeight:'bold', display: { xs: "none", md: "table-cell" } }}>
                   Number of Employees
                 </TableCell>
               </TableRow>
@@ -251,7 +255,7 @@ const Companies = () => {
                     </TableCell>
                     <TableCell align="center">{row.location}</TableCell>
                     <TableCell align="center">{row.industry}</TableCell>
-                    <TableCell align="center">{row.employees}</TableCell>
+                    <TableCell align="center"  sx={{ display: { xs: "none", md: "table-cell" } }}>{row.employees}</TableCell> 
                   </TableRow>
                 ))
               ) : (
