@@ -82,7 +82,7 @@ const Companies = () => {
   }, [page, filteredData]);
 
   const renderSkeletonRows = () =>
-    [...Array(10)].map((_, index) => (
+    [...Array(6)].map((_, index) => (
       <TableRow key={index}>
         {[...Array(4)].map((__, i) => (
           <TableCell key={i}>
@@ -115,10 +115,10 @@ const Companies = () => {
           justifyContent: "center",
           alignItems: "center",
           my: 2,
-          boxShadow:1,
-          borderRadius:3,
-          p:3
-
+          boxShadow: 1,
+          borderRadius: 3,
+          p: 3,
+          border: 2,
         }}
       >
         <Grid item size={{ xs: 12, md: 3 }}>
@@ -194,6 +194,7 @@ const Companies = () => {
           display: "flex",
           flexDirection: "column",
           height: state.error ? "60vh" : "100%",
+          borderRadius: 3,
         }}
       >
         {state.loading ? (
@@ -207,7 +208,13 @@ const Companies = () => {
                 <TableCell align="center" sx={{ fontWeight: "bold" }}>
                   Industry
                 </TableCell>
-                <TableCell align="center" sx={{ fontWeight: "bold", display: { xs: "none", md: "table-cell" } }}>
+                <TableCell
+                  align="center"
+                  sx={{
+                    fontWeight: "bold",
+                    display: { xs: "none", md: "table-cell" },
+                  }}
+                >
                   Number of Employees
                 </TableCell>
               </TableRow>
@@ -223,7 +230,7 @@ const Companies = () => {
               justifyContent: "center",
             }}
           >
-            <Typography color="error" align="center" fontWeight={'bold'}>
+            <Typography color="error" align="center" fontWeight={"bold"}>
               ⚠️ Failed to load company data. Please try again later.
             </Typography>
           </Box>
@@ -238,7 +245,13 @@ const Companies = () => {
                 <TableCell align="center" sx={{ fontWeight: "bold" }}>
                   Industry
                 </TableCell>
-                <TableCell align="center"  sx={{fontWeight:'bold', display: { xs: "none", md: "table-cell" } }}>
+                <TableCell
+                  align="center"
+                  sx={{
+                    fontWeight: "bold",
+                    display: { xs: "none", md: "table-cell" },
+                  }}
+                >
                   Number of Employees
                 </TableCell>
               </TableRow>
@@ -255,7 +268,12 @@ const Companies = () => {
                     </TableCell>
                     <TableCell align="center">{row.location}</TableCell>
                     <TableCell align="center">{row.industry}</TableCell>
-                    <TableCell align="center"  sx={{ display: { xs: "none", md: "table-cell" } }}>{row.employees}</TableCell> 
+                    <TableCell
+                      align="center"
+                      sx={{ display: { xs: "none", md: "table-cell" } }}
+                    >
+                      {row.employees}
+                    </TableCell>
                   </TableRow>
                 ))
               ) : (
@@ -278,7 +296,7 @@ const Companies = () => {
             alignItems: "center",
             justifyContent: "center",
             gap: 2,
-            m: 3,
+            m: 2,
           }}
         >
           <Button
@@ -305,7 +323,7 @@ const Companies = () => {
           <Grid item sx={{ display: { md: "none", xs: "block" } }}>
             <Button
               sx={{
-                color: "black",          
+                color: "black",
               }}
             >
               {page}
