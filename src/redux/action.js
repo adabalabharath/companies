@@ -5,7 +5,8 @@ import { DATA_SUCCESS, ERROR, LOADING, SORT_ASC, SORT_DES } from "./actionTypes"
 export const fetchData =()=> async (dispatch) => {
     try {
       dispatch({ type: LOADING });
-      const response = await axios.get("/public/db.json");
+      const response = await axios.get("/db.json");
+      console.log(response)
       setTimeout(()=>dispatch({ type: DATA_SUCCESS, payload: response.data.companies }),2000)
       
     } catch (error) {

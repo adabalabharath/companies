@@ -189,7 +189,7 @@ const Companies = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          height: state.error ? "70vh" : "100%",
+          height: state.error ? "60vh" : "100%",
         }}
       >
         {state.loading ? (
@@ -219,7 +219,7 @@ const Companies = () => {
               justifyContent: "center",
             }}
           >
-            <Typography color="error" align="center">
+            <Typography color="error" align="center" fontWeight={'bold'}>
               ⚠️ Failed to load company data. Please try again later.
             </Typography>
           </Box>
