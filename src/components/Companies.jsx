@@ -268,7 +268,7 @@ const Companies = () => {
                   align="center"
                   sx={{
                     fontWeight: "bold",
-                    //display: { xs: "none", md: "table-cell" },
+                    display: { xs: "none", md: "table-cell" },
                   }}
                 >
                   Number of Employees
@@ -305,7 +305,7 @@ const Companies = () => {
                   align="center"
                   sx={{
                     fontWeight: "bold",
-                    //display: { xs: "none", md: "table-cell" },
+                    display: { xs: "none", md: "table-cell" },
                   }}
                 >
                   Number of Employees
@@ -326,7 +326,7 @@ const Companies = () => {
                     <TableCell align="center">{row.industry}</TableCell>
                     <TableCell
                       align="center"
-                      // sx={{ display: { xs: "none", md: "table-cell" } }}
+                      sx={{ display: { xs: "none", md: "table-cell" } }}
                     >
                       {row.employees}
                     </TableCell>
