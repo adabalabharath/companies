@@ -40,16 +40,12 @@ const Companies = () => {
     setCompanies(state.data);
   }, [state.data]);
 
-  console.log(paginatedData, filteredData);
-
   useEffect(() => {
     let data = [...companies];
     if (selectedName) {
       data = data.filter((x) => x.name == selectedName);
-      console.log(data);
     }
     if (selectedLocation) {
-      console.log(data);
       data = data.filter((x) => x.location == selectedLocation);
     }
     if (selectedIndustry) {
@@ -57,14 +53,13 @@ const Companies = () => {
     }
     if (state.sortAsc) {
       data = data.sort((a, b) => a.name.localeCompare(b.name));
-      console.log(data);
     }
     if (state.sortDes) {
       data = data.sort((a, b) => b.name.localeCompare(a.name));
-      console.log(data);
     }
 
     setFilteredData(data);
+    setPage(1);
   }, [
     selectedName,
     selectedLocation,
@@ -75,6 +70,10 @@ const Companies = () => {
   ]);
 
   useEffect(() => {
+    if (!filteredData || filteredData.length === 0) {
+      setPaginatedData([]);
+      return;
+    }
     const itemsPerPage = 8;
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
@@ -100,17 +99,23 @@ const Companies = () => {
         ))}
       </TableRow>
     ));
-  console.log(paginatedData);
+
   return (
     <>
-      <Box sx={{display:'flex',justifyContent:'center',my:2}}>
-      <Typography variant="h5" sx={{ fontWeight: "bold",color:'grey'}}>
-        List of the Companies
-      </Typography>
+      <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
+        <Typography variant="h5" sx={{ fontWeight: "bold", color: "grey" }}>
+          List of the Companies
+        </Typography>
       </Box>
       <Grid
         container
-        sx={{ display: "flex", gap: 2, justifyContent:'center',alignItems:'center', my: 3 }}
+        sx={{
+          display: "flex",
+          gap: 2,
+          justifyContent: "center",
+          alignItems: "center",
+          my: 3,
+        }}
       >
         <Grid item size={{ xs: 12, md: 3 }}>
           <Autocomplete
@@ -181,7 +186,11 @@ const Companies = () => {
       </Grid>
       <TableContainer
         component={Paper}
-        sx={{ display: "flex", flexDirection: "column",height:state.error?'70vh':'100%' }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          height: state.error ? "70vh" : "100%",
+        }}
       >
         {state.loading ? (
           <Table sx={{ width: "100%" }}>
@@ -257,34 +266,57 @@ const Companies = () => {
         )}
       </TableContainer>
 
-      {paginatedData.length>1 && <Box sx={{display:'flex',alignItems:'center',justifyContent:'center',gap:2,m:3}}>
-        <Button
-          onClick={() => setPage(page - 1)}
-          disabled={page == 1}
-          variant="contained"
-          sx={{ color: "white", backgroundColor: "black" }}
+      {paginatedData.length > 1 && (
+        <Grid
+          container
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 2,
+            m: 3,
+          }}
         >
-          Prev
-        </Button>
-        {[...Array(Math.ceil(filteredData.length / 8))].map((_, i) => (
           <Button
-            sx={{
-              color: page == i + 1 ? "white" : "black",
-              backgroundColor: page == i + 1 ? "black" : "white",
-            }}
+            onClick={() => setPage(page - 1)}
+            disabled={page == 1}
+            variant="contained"
+            sx={{ color: "white", backgroundColor: "black" }}
           >
-            {i + 1}
+            Prev
           </Button>
-        ))}
-        <Button
-          onClick={() => setPage(page + 1)}
-          disabled={page == Math.ceil(filteredData.length / 8)}
-          variant="contained"
-          sx={{ color: "white", backgroundColor: "black" }}
-        >
-          Next
-        </Button>
-      </Box>}
+          <Grid item sx={{ display: { md: "block", xs: "none" } }}>
+            {[...Array(Math.ceil(filteredData.length / 8))].map((_, i) => (
+              <Button
+                sx={{
+                  color: page == i + 1 ? "white" : "black",
+                  backgroundColor: page == i + 1 ? "black" : "white",
+                }}
+                onClick={() => setPage(i + 1)}
+              >
+                {i + 1}
+              </Button>
+            ))}
+          </Grid>
+          <Grid item sx={{ display: { md: "none", xs: "block" } }}>
+            <Button
+              sx={{
+                color: "black",          
+              }}
+            >
+              {page}
+            </Button>
+          </Grid>
+          <Button
+            onClick={() => setPage(page + 1)}
+            disabled={page == Math.ceil(filteredData.length / 8)}
+            variant="contained"
+            sx={{ color: "white", backgroundColor: "black" }}
+          >
+            Next
+          </Button>
+        </Grid>
+      )}
     </>
   );
 };
