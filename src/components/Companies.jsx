@@ -266,7 +266,7 @@ const Companies = () => {
         )}
       </TableContainer>
 
-      {paginatedData.length > 1 && (
+      {paginatedData.length > 8 && (
         <Grid
           container
           sx={{
