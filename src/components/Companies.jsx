@@ -102,9 +102,9 @@ const Companies = () => {
 
   return (
     <>
-      <Box sx={{ display: "flex", justifyContent: "center", my: 2 }}>
-        <Typography variant="h5" sx={{ fontWeight: "bold", color: "grey" }}>
-          List of the Companies
+      <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
+        <Typography variant="h5" sx={{ fontWeight: "bold", color: "#252323" }}>
+          COMPANIES LIST
         </Typography>
       </Box>
       <Grid
@@ -118,7 +118,7 @@ const Companies = () => {
           boxShadow: 1,
           borderRadius: 3,
           p: 3,
-          border: 2,
+          backgroundColor: "#252323",
         }}
       >
         <Grid item size={{ xs: 12, md: 3 }}>
@@ -128,6 +128,7 @@ const Companies = () => {
             disableClearable
             options={companies?.map((option) => option.name)}
             onInputChange={(event, newValue) => setSelectedName(newValue)}
+            sx={{ backgroundColor: "white", borderRadius: 3 }}
             renderInput={(params) => (
               <TextField
                 {...params}
@@ -147,6 +148,7 @@ const Companies = () => {
             disablePortal
             options={[...new Set(companies?.map((x) => x.location))]}
             onInputChange={(event, newValue) => setSelectedLocation(newValue)}
+            sx={{ backgroundColor: "white", borderRadius: 3 }}
             renderInput={(params) => (
               <TextField {...params} label="Filter By Location" />
             )}
@@ -157,6 +159,7 @@ const Companies = () => {
             disablePortal
             options={[...new Set(companies?.map((x) => x.industry))]}
             onInputChange={(event, newValue) => setSelectedIndustry(newValue)}
+            sx={{ backgroundColor: "white", borderRadius: 3 }}
             renderInput={(params) => (
               <TextField {...params} label="Filter By industry" />
             )}
@@ -170,7 +173,15 @@ const Companies = () => {
             <Button
               variant="outlined"
               fullWidth
-              sx={{ color: "black", borderColor: "black" }}
+              sx={{
+                color: "white",
+                borderColor: "white",
+                "&.Mui-disabled": {
+                  color: "rgba(255,255,255,0.5)", 
+                  borderColor: "rgba(255,255,255,0.3)", 
+                  backgroundColor: "rgba(255,255,255,0.1)",
+                },
+              }}
               onClick={() => dispatch(sortAlphabetically("ASC"))}
               disabled={state.sortAsc}
             >
@@ -179,7 +190,13 @@ const Companies = () => {
             <Button
               variant="outlined"
               fullWidth
-              sx={{ color: "black", borderColor: "black" }}
+              sx={{ color: "white", borderColor: "white"
+                ,"&.Mui-disabled": {
+                  color: "rgba(255,255,255,0.5)", 
+                  borderColor: "rgba(255,255,255,0.3)", 
+                  backgroundColor: "rgba(255,255,255,0.1)",
+                },
+              }}
               onClick={() => dispatch(sortAlphabetically("DES"))}
               disabled={state.sortDes}
             >
@@ -195,6 +212,7 @@ const Companies = () => {
           flexDirection: "column",
           height: state.error ? "60vh" : "100%",
           borderRadius: 3,
+          backgroundColor: "whitesmoke",
         }}
       >
         {state.loading ? (
