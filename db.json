@@ -1,0 +1,214 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "TechNova Solutions",
+      "location": "San Francisco",
+      "industry": "Software",
+      "employees": 120
+    },
+    {
+      "id": 2,
+      "name": "GreenEarth Industries",
+      "location": "New York",
+      "industry": "Renewable Energy",
+      "employees": 85
+    },
+    {
+      "id": 3,
+      "name": "HealthBridge Inc.",
+      "location": "Chicago",
+      "industry": "Healthcare",
+      "employees": 300
+    },
+    {
+      "id": 4,
+      "name": "Finverse Analytics",
+      "location": "Boston",
+      "industry": "Finance",
+      "employees": 210
+    },
+    {
+      "id": 5,
+      "name": "EduSmart Technologies",
+      "location": "Austin",
+      "industry": "EdTech",
+      "employees": 95
+    },
+    {
+      "id": 6,
+      "name": "Cloudify Networks",
+      "location": "Seattle",
+      "industry": "Cloud Computing",
+      "employees": 450
+    },
+    {
+      "id": 7,
+      "name": "UrbanNest Constructions",
+      "location": "Los Angeles",
+      "industry": "Real Estate",
+      "employees": 175
+    },
+    {
+      "id": 8,
+      "name": "AgroLink Farms",
+      "location": "Dallas",
+      "industry": "Agriculture",
+      "employees": 60
+    },
+    {
+      "id": 9,
+      "name": "CyberFort Security",
+      "location": "Denver",
+      "industry": "Cybersecurity",
+      "employees": 130
+    },
+    {
+      "id": 10,
+      "name": "AeroLogix Systems",
+      "location": "Atlanta",
+      "industry": "Aerospace",
+      "employees": 320
+    },
+    {
+      "id": 11,
+      "name": "OceanWave Shipping",
+      "location": "Miami",
+      "industry": "Logistics",
+      "employees": 250
+    },
+    {
+      "id": 12,
+      "name": "PixelVibe Studios",
+      "location": "Portland",
+      "industry": "Design",
+      "employees": 75
+    },
+    {
+      "id": 13,
+      "name": "NextGen Robotics",
+      "location": "San Diego",
+      "industry": "Robotics",
+      "employees": 400
+    },
+    {
+      "id": 14,
+      "name": "QuantumAI Labs",
+      "location": "Palo Alto",
+      "industry": "Artificial Intelligence",
+      "employees": 350
+    },
+    {
+      "id": 15,
+      "name": "EcoRide Motors",
+      "location": "Detroit",
+      "industry": "Automotive",
+      "employees": 500
+    },
+    {
+      "id": 16,
+      "name": "BrightPath Consulting",
+      "location": "Phoenix",
+      "industry": "Business Services",
+      "employees": 200
+    },
+    {
+      "id": 17,
+      "name": "MediCore Pharma",
+      "location": "Houston",
+      "industry": "Pharmaceuticals",
+      "employees": 600
+    },
+    {
+      "id": 18,
+      "name": "CodeCrafters LLC",
+      "location": "Austin",
+      "industry": "Software",
+      "employees": 150
+    },
+    {
+      "id": 19,
+      "name": "SkyReach Drones",
+      "location": "San Jose",
+      "industry": "Aviation",
+      "employees": 80
+    },
+    {
+      "id": 20,
+      "name": "DataForge Analytics",
+      "location": "Boston",
+      "industry": "Data Science",
+      "employees": 240
+    },
+    {
+      "id": 21,
+      "name": "FusionWear Apparel",
+      "location": "Los Angeles",
+      "industry": "Fashion",
+      "employees": 300
+    },
+    {
+      "id": 22,
+      "name": "HomeHive Interiors",
+      "location": "Seattle",
+      "industry": "Interior Design",
+      "employees": 110
+    },
+    {
+      "id": 23,
+      "name": "Foodify Kitchens",
+      "location": "Chicago",
+      "industry": "Food Tech",
+      "employees": 190
+    },
+    {
+      "id": 24,
+      "name": "ByteWorks Hardware",
+      "location": "New York",
+      "industry": "Hardware Manufacturing",
+      "employees": 270
+    },
+    {
+      "id": 25,
+      "name": "SolarEdge Innovations",
+      "location": "Denver",
+      "industry": "Renewable Energy",
+      "employees": 210
+    },
+    {
+      "id": 26,
+      "name": "LifePulse Diagnostics",
+      "location": "Houston",
+      "industry": "Healthcare",
+      "employees": 380
+    },
+    {
+      "id": 27,
+      "name": "BlueSky Airlines",
+      "location": "Atlanta",
+      "industry": "Aviation",
+      "employees": 800
+    },
+    {
+      "id": 28,
+      "name": "GameForge Studios",
+      "location": "San Francisco",
+      "industry": "Gaming",
+      "employees": 120
+    },
+    {
+      "id": 29,
+      "name": "VividStream Media",
+      "location": "Los Angeles",
+      "industry": "Entertainment",
+      "employees": 220
+    },
+    {
+      "id": 30,
+      "name": "QuantumEdge Finance",
+      "location": "New York",
+      "industry": "Finance",
+      "employees": 310
+    }
+  ]
+}

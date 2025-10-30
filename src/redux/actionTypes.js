@@ -1,0 +1,5 @@
+export const LOADING='LOADING'
+export const ERROR='ERROR'
+export const DATA_SUCCESS='DATA_SUCCESS'
+export const SORT_DES='SORT_DES'
+export const SORT_ASC='SORT_ASC'
